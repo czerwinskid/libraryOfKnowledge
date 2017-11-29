@@ -17,7 +17,7 @@ public class Librarian extends Library{
 	static List<String> books = new ArrayList<>();
 	static List<String> movies = new ArrayList<>();
 	
-		public static void main(String args[]) {
+		public static void addToLibrary() {
 			Library b1 = new Library("Lord of The Ring", "Tolkien");
 			Library b2 = new Library("Harry Potter", "J.K. Rowling");
 				
@@ -50,9 +50,15 @@ public class Librarian extends Library{
 			}System.out.println();				
 		}
 		
-		public void borrowBook(String name) {
+		public static void borrowBook(String name) {
 			int k = books.indexOf(name);
 			books.set(k, "Wypo¿yczono: " + name);
+			
+			Iterator<String> showBooks = books.iterator();
+			while (showBooks.hasNext()) {
+				System.out.print("  ");
+				System.out.println(showBooks.next());			
+			}System.out.println();
 		}
 		public void returnBook(String name) {
 			int k = books.indexOf(name);
