@@ -6,7 +6,6 @@ import java.util.Iterator;
 
 public class Librarian extends Library{
 	public static void main(String args[]) {
-		
 		List<String> books = new ArrayList<>();
 		Library b1 = new Library("Lord of The Ring", "Tolkien");
 		Library b2 = new Library("Harry Potter", "J.K. Rowling");
@@ -40,8 +39,17 @@ public class Librarian extends Library{
 			System.out.println(showMovies.next());
 		}System.out.println();
 		
+	}
+	public void borrowBook() {
 		
+	}
+	public void returnBook() {
 		
+	}
+	public void borrowMovie() {
+		
+	}
+	public void returnMovie() {
 		
 	}
 	
