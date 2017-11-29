@@ -6,20 +6,40 @@ import java.util.Iterator;
 
 public class Librarian extends Library{
 	public static void main(String args[]) {
+		final int i = 0;
 		
 		List<String> books = new ArrayList<>();
-		Library l1 = new Library("Lord of The Ring", "Tolkien");
-		Library l2 = new Library("Harry Potter", "J.K. Rowling");
+		Library b1 = new Library("Lord of The Ring", "Tolkien");
+		Library b2 = new Library("Harry Potter", "J.K. Rowling");
 				
-		books.add(l1.getBook());
-		books.add(l2.getBook());
-
-		Iterator show = books.iterator();
-		int i = 0;
+		books.add(b1.getBook());
+		books.add(b2.getBook());
 		
-		while (show.hasNext()) {
-			System.out.println(show.next());
-		}
+		Iterator showBooks = books.iterator();
+		
+		System.out.println("Ksi¹¿ki w naszej bibliotece:");
+		
+		while (showBooks.hasNext()) {
+			System.out.print("  ");
+			System.out.println(showBooks.next());			
+		}System.out.println();
+
+		List<String> movies = new ArrayList<>();
+		
+		Library m1 = new Library("Lord of The Rings", "Peter Jackson");
+		Library m2 = new Library("Harry Potter: Kamieñ", "Chris Columbus");
+				
+		movies.add(m1.getBook());
+		movies.add(m2.getBook());
+
+		Iterator showMovies = movies.iterator();
+		
+		System.out.println("Filmy w naszej bibliotece:");
+		
+		while (showMovies.hasNext()) {
+			System.out.print("  ");
+			System.out.println(showMovies.next());
+		}System.out.println();
 		
 		
 		

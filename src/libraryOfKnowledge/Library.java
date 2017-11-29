@@ -12,8 +12,7 @@ public class Library {
 	
 	public Library(String n, String a) {
 		name = n;
-		author = a;
-		
+		author = a;		
 	}
 	
 	void setName(String n) {
@@ -23,6 +22,9 @@ public class Library {
 		author = a;
 	}
 	String getBook() {
+		return "Nazwa: " + name + ", Autor: " + author;
+	}
+	String getMovie() {
 		return "Nazwa: " + name + ", Autor: " + author;
 	}
 
