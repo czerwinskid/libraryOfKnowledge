@@ -11,37 +11,46 @@ public class Library {
 	private List<String> books = new ArrayList<>();
 	private List<String> movies = new ArrayList<>();
 	
-	Library(String n, String a) {
+	public Library(){
+		
+	}
+	public Library(String n, String a) {
 		name = n;
 		author = a;
 	}
 	
-	Library(String t){
+	public Library(String t){
 		t = name + " " + author;
 		together = t;
 	}
 	
-	void setName(String n) {
+	public void setName(String n) {
 		name = n;
 	}
-	void setAuthor(String a) {
+	public void setAuthor(String a) {
 		author = a;
 	}	
-	void addBook(String t) {
+	public void addBook(String t) {
 		t = together;
 		books.add(t);
 	}
-	void addMovie(String t) {
+	public void addMovie(String t) {
 		t = together;
 		movies.add(t);
 	}
-	void getBooks(String t) {
+	public void deleteBooks(String t) {
 		t = together;
 		books.remove(t);
 	}
-	void getMovies(String t) {
+	public void deleteMovies(String t) {
 		t = together;
 		movies.remove(t);
+	}
+	
+	public void showBooks(String book) {
+		book = together;
+		int s = books.indexOf(book);
+		System.out.println(s);
 	}
 
 }
