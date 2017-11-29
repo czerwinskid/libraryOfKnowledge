@@ -6,7 +6,6 @@ import java.util.Iterator;
 
 public class Librarian extends Library{
 	public static void main(String args[]) {
-		final int i = 0;
 		
 		List<String> books = new ArrayList<>();
 		Library b1 = new Library("Lord of The Ring", "Tolkien");
@@ -15,7 +14,7 @@ public class Librarian extends Library{
 		books.add(b1.getBook());
 		books.add(b2.getBook());
 		
-		Iterator showBooks = books.iterator();
+		Iterator<String> showBooks = books.iterator();
 		
 		System.out.println("Ksi¹¿ki w naszej bibliotece:");
 		
@@ -32,7 +31,7 @@ public class Librarian extends Library{
 		movies.add(m1.getBook());
 		movies.add(m2.getBook());
 
-		Iterator showMovies = movies.iterator();
+		Iterator<String> showMovies = movies.iterator();
 		
 		System.out.println("Filmy w naszej bibliotece:");
 		

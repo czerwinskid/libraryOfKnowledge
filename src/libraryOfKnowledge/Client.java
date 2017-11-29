@@ -1,5 +1,5 @@
 package libraryOfKnowledge;
 
-public class Client {
+public class Client extends Librarian {
 
 }

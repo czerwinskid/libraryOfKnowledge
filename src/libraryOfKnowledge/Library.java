@@ -3,7 +3,6 @@ package libraryOfKnowledge;
 public class Library {
 	private String name;
 	private String author;
-	private String together;
 	
 	public Library() {
 		name = null;
