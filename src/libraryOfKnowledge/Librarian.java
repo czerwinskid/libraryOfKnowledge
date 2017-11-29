@@ -50,7 +50,7 @@ public class Librarian extends Library{
 			}System.out.println();				
 		}
 		
-		public static void borrowBook(String name) {
+		public void borrowBook(String name) {
 			int k = books.indexOf(name);
 			books.set(k, "Wypo¿yczono: " + name);
 		}
