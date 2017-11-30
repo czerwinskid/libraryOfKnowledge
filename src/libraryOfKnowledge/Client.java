@@ -8,8 +8,7 @@ public class Client extends Librarian {
 		Librarian c1 = new Librarian("Lord of The Ring", "Tolkien");
 		addToLibrary();
 		
-		String x = c1.getBook();
-		
+		String x = c1.getRecord();		
 		
 		borrowBook(x);
 		

@@ -20,10 +20,7 @@ public class Library {
 	void setAuthor(String a) {
 		author = a;
 	}
-	String getBook() {
-		return "Nazwa: " + name + ", Autor: " + author;
-	}
-	String getMovie() {
+	String getRecord() {
 		return "Nazwa: " + name + ", Autor: " + author;
 	}
 

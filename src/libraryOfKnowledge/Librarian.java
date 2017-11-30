@@ -21,8 +21,8 @@ public class Librarian extends Library{
 		Library b1 = new Library("Lord of The Ring", "Tolkien");
 		Library b2 = new Library("Harry Potter", "J.K. Rowling");
 				
-		books.add(b1.getBook());
-		books.add(b2.getBook());
+		books.add(b1.getRecord());
+		books.add(b2.getRecord());
 		
 		Iterator<String> showBooks = books.iterator();
 		System.out.println("[BIBLIOTEKA]");
@@ -37,8 +37,8 @@ public class Librarian extends Library{
 		Library m1 = new Library("Lord of The Rings", "Peter Jackson");
 		Library m2 = new Library("Harry Potter: Kamieñ", "Chris Columbus");
 				
-		movies.add(m1.getBook());
-		movies.add(m2.getBook());
+		movies.add(m1.getRecord());
+		movies.add(m2.getRecord());
 
 		Iterator<String> showMovies = movies.iterator();
 		
