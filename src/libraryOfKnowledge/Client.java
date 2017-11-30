@@ -10,10 +10,11 @@ public class Client extends Librarian {
 		
 		String x1 = c1.getRecord();
 		
+		showLibrary();
+		
 		borrowBook(x1);
 		
 		returnBook(books.get(0));
-		System.out.println(books.get(0));
 		
 		
 	}

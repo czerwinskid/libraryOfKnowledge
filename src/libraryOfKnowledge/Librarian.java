@@ -19,7 +19,7 @@ public class Librarian extends Library{
 	static List<String> books = new ArrayList<>();
 	static List<String> movies = new ArrayList<>();
 	
-	static SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss,SSS dd-MM-yyyy");
+	static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 	static Calendar calendar = Calendar.getInstance();
 	
 	public static void addToLibrary() {
@@ -55,9 +55,9 @@ public class Librarian extends Library{
 	}
 	public static void returnBook(String name) {
 		String dateString = name.replaceAll("(.*)Wypo퓓czono do: ", "").replaceAll("r.*","");
-		System.out.println(dateString);
+		/*System.out.println(dateString);*/
 		String cutedname = name.replaceAll("(.*)Wypo퓓czono do: ","").replaceAll(dateString+"r ", "");
-		System.out.println(cutedname);
+		/*System.out.println(cutedname);*/
 		int k = books.indexOf(name);
 		books.set(k, cutedname);
 		showLibrary();
@@ -71,7 +71,6 @@ public class Librarian extends Library{
 	}
 	public static void returnMovie(String name) {	
 		String dateString = name.replaceAll("(.*)Wypo퓓czono do: ", "").replaceAll("r.*","");
-		System.out.println(dateString);
 		String cutedname = name.replaceAll("(.*)Wypo퓓czono do: ","").replaceAll(dateString+"r ", "");
 		int k = movies.indexOf(name);
 		movies.set(k, cutedname);
