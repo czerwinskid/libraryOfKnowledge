@@ -1,7 +1,6 @@
 package libraryOfKnowledge;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 public class Client extends Librarian {
 	
@@ -16,10 +15,7 @@ public class Client extends Librarian {
 		returnBook(books.get(0));
 		System.out.println(books.get(0));
 		
-		Date currentDate = new Date();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-		String dateString = dateFormat.format(currentDate);
-		System.out.println(dateString);
+		
 	}
 
 }

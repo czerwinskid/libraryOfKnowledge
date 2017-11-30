@@ -1,8 +1,11 @@
 package libraryOfKnowledge;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Iterator;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Librarian extends Library{
 	
@@ -30,26 +33,38 @@ public class Librarian extends Library{
 		movies.add(m1.getRecord());
 		movies.add(m2.getRecord());
 	}
+	
+	public static String addDate() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DAY_OF_MONTH, 30);
+		String dateString = dateFormat.format(calendar.getTime());
+		return dateString;
+	}
 		
 	public static void borrowBook(String name) {
+		String dateString = addDate();
 		int k = books.indexOf(name);
-		books.set(k, "Wypo퓓czono: " + name);
+		books.set(k, "Wypo퓓czono do: "+ dateString + " " + name);
 		showLibrary();
 	}
 	public static void returnBook(String name) {
-		String cutedname = name.replaceAll("(.*)Wypo퓓czono: ","");
+		String dateString = addDate();
+		String cutedname = name.replaceAll("(.*)Wypo퓓czono do: " + dateString,"");
 		int k = books.indexOf(name);
 		books.set(k, cutedname);
 		showLibrary();
 	}
 	public static void borrowMovie(String name) {
+		String dateString = addDate();
 		int k = movies.indexOf(name);
-		movies.set(k, "Wypo퓓czono: " + name);
+		movies.set(k, "Wypo퓓czono do: " + dateString + " " + name);
 		showLibrary();
 		
 	}
-	public static void returnMovie(String name) {		
-		String cutedname = name.replaceAll("(.*)Wypo퓓czono: ","");
+	public static void returnMovie(String name) {	
+		String dateString = addDate();
+		String cutedname = name.replaceAll("(.*)Wypo퓓czono do: " + dateString,"");
 		int k = movies.indexOf(name);
 		movies.set(k, cutedname);
 		showLibrary();
