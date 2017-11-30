@@ -24,31 +24,11 @@ public class Librarian extends Library{
 		books.add(b1.getRecord());
 		books.add(b2.getRecord());
 		
-		Iterator<String> showBooks = books.iterator();
-		System.out.println("[BIBLIOTEKA]");
-		System.out.println("Ksi¹¿ki w naszej bibliotece:");
-		
-		while (showBooks.hasNext()) {
-			System.out.print("  ");
-			System.out.println(showBooks.next());			
-		}System.out.println();
-
-		
 		Library m1 = new Library("Lord of The Rings", "Peter Jackson");
 		Library m2 = new Library("Harry Potter: Kamieñ", "Chris Columbus");
 				
 		movies.add(m1.getRecord());
 		movies.add(m2.getRecord());
-
-		Iterator<String> showMovies = movies.iterator();
-		
-		System.out.println("Filmy w naszej bibliotece:");
-		
-		while (showMovies.hasNext()) {
-			System.out.print("  ");
-			System.out.println(showMovies.next());
-		}System.out.println("[BIBLIOTEKA]");
-		System.out.println();				
 	}
 		
 	public static void borrowBook(String name) {
@@ -69,6 +49,26 @@ public class Librarian extends Library{
 		String cutedname = name.replaceAll("(.*)Wypo¿yczono: ","");
 		int k = movies.indexOf(name);
 		movies.set(k, cutedname);
+	}
+	public static void showLibrary() {
+		System.out.println("[BIBLIOTEKA]");
+		System.out.println("Ksi¹¿ki w naszej bibliotece:");
+		Iterator<String> showBooks = books.iterator();
+		
+		while (showBooks.hasNext()) {
+			System.out.print("  ");
+			System.out.println(showBooks.next());			
+		}System.out.println();		
+		
+		Iterator<String> showMovies = movies.iterator();
+		
+		System.out.println("Filmy w naszej bibliotece:");
+		
+		while (showMovies.hasNext()) {
+			System.out.print("  ");
+			System.out.println(showMovies.next());
+		}System.out.println("[BIBLIOTEKA]");
+		System.out.println();
 	}
 	
 }
