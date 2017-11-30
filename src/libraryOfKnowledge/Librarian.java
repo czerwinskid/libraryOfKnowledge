@@ -36,11 +36,6 @@ public class Librarian extends Library{
 		movies.add(m2.getRecord());		
 	}
 	
-	
-	public static void Punishmend() {
-		
-	}
-	
 	public static String addDate() {		
 		calendar.add(Calendar.DAY_OF_MONTH, 30);
 		String dateString = dateFormat.format(calendar.getTime());
