@@ -18,7 +18,7 @@ public class Librarian extends Library{
 	static List<String> movies = new ArrayList<>();
 	
 	public static void addToLibrary() {
-		Library b1 = new Library("Lord of The Ring", "Tolkien");
+		Library b1 = new Library("Lord of The Ring", "J.R.R. Tolkien");
 		Library b2 = new Library("Harry Potter", "J.K. Rowling");
 				
 		books.add(b1.getRecord());
@@ -33,22 +33,26 @@ public class Librarian extends Library{
 		
 	public static void borrowBook(String name) {
 		int k = books.indexOf(name);
-		books.set(k, "Wypo퓓czono: " + name);		
+		books.set(k, "Wypo퓓czono: " + name);
+		showLibrary();
 	}
 	public static void returnBook(String name) {
 		String cutedname = name.replaceAll("(.*)Wypo퓓czono: ","");
 		int k = books.indexOf(name);
-		books.set(k, cutedname);		
+		books.set(k, cutedname);
+		showLibrary();
 	}
 	public static void borrowMovie(String name) {
 		int k = movies.indexOf(name);
 		movies.set(k, "Wypo퓓czono: " + name);
+		showLibrary();
 		
 	}
 	public static void returnMovie(String name) {		
 		String cutedname = name.replaceAll("(.*)Wypo퓓czono: ","");
 		int k = movies.indexOf(name);
 		movies.set(k, cutedname);
+		showLibrary();
 	}
 	public static void showLibrary() {
 		System.out.println("[BIBLIOTEKA]");
