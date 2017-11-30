@@ -19,6 +19,9 @@ public class Librarian extends Library{
 	static List<String> books = new ArrayList<>();
 	static List<String> movies = new ArrayList<>();
 	
+	static SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss,SSS dd-MM-yyyy");
+	static Calendar calendar = Calendar.getInstance();
+	
 	public static void addToLibrary() {
 		Library b1 = new Library("Lord of The Ring", "J.R.R. Tolkien");
 		Library b2 = new Library("Harry Potter", "J.K. Rowling");
@@ -30,16 +33,15 @@ public class Librarian extends Library{
 		Library m2 = new Library("Harry Potter: Kamieñ", "Chris Columbus");
 				
 		movies.add(m1.getRecord());
-		movies.add(m2.getRecord());
+		movies.add(m2.getRecord());		
 	}
+	
 	
 	public static void Punishmend() {
 		
 	}
 	
-	public static String addDate() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-		Calendar calendar = Calendar.getInstance();
+	public static String addDate() {		
 		calendar.add(Calendar.DAY_OF_MONTH, 30);
 		String dateString = dateFormat.format(calendar.getTime());
 		return dateString;
@@ -48,12 +50,14 @@ public class Librarian extends Library{
 	public static void borrowBook(String name) {
 		String dateString = addDate();
 		int k = books.indexOf(name);
-		books.set(k, "Wypo¿yczono do: "+ dateString + " " + name);
+		books.set(k, "Wypo¿yczono do: "+ dateString + "r " + name);
 		showLibrary();
 	}
 	public static void returnBook(String name) {
-		String dateString = addDate();
-		String cutedname = name.replaceAll("(.*)Wypo¿yczono do: " + dateString,"");
+		String dateString = name.replaceAll("(.*)Wypo¿yczono do: ", "").replaceAll("r.*","");
+		System.out.println(dateString);
+		String cutedname = name.replaceAll("(.*)Wypo¿yczono do: ","").replaceAll(dateString+"r ", "");
+		System.out.println(cutedname);
 		int k = books.indexOf(name);
 		books.set(k, cutedname);
 		showLibrary();
@@ -61,13 +65,14 @@ public class Librarian extends Library{
 	public static void borrowMovie(String name) {
 		String dateString = addDate();
 		int k = movies.indexOf(name);
-		movies.set(k, "Wypo¿yczono do: " + dateString + " " + name);
+		movies.set(k, "Wypo¿yczono do: " + dateString + "r " + name);
 		showLibrary();
 		
 	}
 	public static void returnMovie(String name) {	
-		String dateString = addDate();
-		String cutedname = name.replaceAll("(.*)Wypo¿yczono do: " + dateString,"");
+		String dateString = name.replaceAll("(.*)Wypo¿yczono do: ", "").replaceAll("r.*","");
+		System.out.println(dateString);
+		String cutedname = name.replaceAll("(.*)Wypo¿yczono do: ","").replaceAll(dateString+"r ", "");
 		int k = movies.indexOf(name);
 		movies.set(k, cutedname);
 		showLibrary();
