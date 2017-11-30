@@ -5,7 +5,6 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Iterator;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Librarian extends Library{
 	
@@ -32,6 +31,10 @@ public class Librarian extends Library{
 				
 		movies.add(m1.getRecord());
 		movies.add(m2.getRecord());
+	}
+	
+	public static void Punishmend() {
+		
 	}
 	
 	public static String addDate() {
